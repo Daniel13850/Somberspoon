@@ -4,9 +4,9 @@ enableKick: false
 enableJoinRestrictions: false
 opOnJoin: true
 randomizeSpawn: false
-maxEntitiesPerChunk: 5000000
-maxEntitiesPerWorld: 5120000
-maxTntsPerWorld: 102400000
+maxEntitiesPerChunk: 50
+maxEntitiesPerWorld: 5120
+maxTntsPerWorld: 1024
 playerJoinTitle: §7Welcome to Somberspoon!
 playerJoinSubtitle: Free OP • Anarchy • Creative
 opTag: §4§l[§c§lOP§4§l] §c

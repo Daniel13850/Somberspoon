@@ -20,9 +20,9 @@ bedrock:
   # The MOTD that will be broadcasted to Minecraft: Bedrock Edition clients. Irrelevant if "passthrough-motd" is set to true
   # If either of these are empty, the respective string will default to "Geyser"
   motd1: "§fFree OP - Anarchy"
-  motd2: "§8§lWelcome to Kaboom!"
+  motd2: "§8§lWelcome to Somberspoon!"
   # The Server Name that will be sent to Minecraft: Bedrock Edition clients. This is visible in both the pause menu and the settings menu.
-  server-name: "Kaboom"
+  server-name: "Somberspoon"
   # Whether to enable PROXY protocol or not for clients. You DO NOT WANT this feature unless you run UDP reverse proxy
   # in front of your Geyser instance.
   enable-proxy-protocol: false

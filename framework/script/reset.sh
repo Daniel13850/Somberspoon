@@ -33,4 +33,4 @@ sed -i "0,/^[[:space:]]*clone-remote-port:/{s/^\([[:space:]]*\)clone-remote-port
 sed -i "0,/^[[:space:]]*port:/{s/^\([[:space:]]*\)port:.*/\1port: ${bedrock_port_if_no_clone}/}" ~/kaboom/server/plugins/Geyser-Spigot/config.yml
 sed -i "0,/^[[:space:]]*enabled:/{s/^\([[:space:]]*\)enabled:.*/\1enabled: ${discord_log_enabled}/}" ~/kaboom/server/plugins/DiscordLog/config.yml
 sed -i "0,/^[[:space:]]*webhook:/{s|^\([[:space:]]*\)webhook:.*|\1webhook: ${discord_log_webhook}|}" ~/kaboom/server/plugins/DiscordLog/config.yml
-cp ~/kaboom/motd.txt > ~/kaboom/server/plugins/Essentials/motd.txt
+cp ~/kaboom/motd.txt ~/kaboom/server/plugins/Essentials/motd.txt

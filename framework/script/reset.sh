@@ -25,7 +25,7 @@ rm -f ~/kaboom
 
 . ~/config.env
 
-if [ $auto_update ]; then
+if [ $auto_update = "true" ]; then
   cd ~
   git fetch origin --depth 1
   git reset --hard origin/master

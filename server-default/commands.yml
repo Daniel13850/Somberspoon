@@ -1,0 +1,188 @@
+# This is the Bukkit commands configuration file for Paper.
+#
+# If you need help with the configuration or have any questions related to Paper,
+# join us in our Discord or check the docs page.
+#
+# File Reference: https://docs.papermc.io/paper/reference/bukkit-commands-configuration/
+# Docs: https://docs.papermc.io/
+# Discord: https://discord.gg/papermc
+# Website: https://papermc.io/
+
+command-block-overrides: []
+ignore-vanilla-permissions: true
+aliases:
+  ess:
+  - []
+  essentials:
+  - []
+  eessentials:
+  - []
+  eess:
+  - []
+  email:
+  - []
+  eemail:
+  - []
+  ememo:
+  - []
+  mail:
+  - []
+  memo:
+  - []
+  eco:
+  - []
+  eeco:
+  - []
+  economy:
+  - []
+  eeconomy:
+  - []
+  essentials:ess:
+  - []
+  essentials:essentials:
+  - []
+  essentials:eessentials:
+  - []
+  essentials:eess:
+  - []
+  essentials:essversion:
+  - []
+  essentials:email:
+  - []
+  essentials:eemail:
+  - []
+  essentials:ememo:
+  - []
+  essentials:mail:
+  - []
+  essentials:memo:
+  - []
+  essentials:eco:
+  - []
+  essentials:eeco:
+  - []
+  essentials:economy:
+  - []
+  essentials:eeconomy:
+  - []
+  
+  forceload:
+  - []
+  minecraft:forceload:
+  - []
+  paper:
+  - []
+  paper:paper:
+  - []
+  
+  icanhasbukkit:
+  - version $1-
+  ban:
+  - minecraft:ban $1-
+  clear:
+  - minecraft:clear $1-
+  enchant:
+  - minecraft:enchant $1-
+  gamemode:
+  - minecraft:gamemode $1-
+  give:
+  - minecraft:give $1-
+  help:
+  - bukkit:help $1-
+  item:
+  - minecraft:item $1-
+  kick:
+  - minecraft:kick $1-
+  kill:
+  - minecraft:kill $1-
+  list:
+  - minecraft:list $1-
+  me:
+  - minecraft:me $1-
+  msg:
+  - minecraft:msg $1-
+  pardon:
+  - minecraft:pardon $1-
+  recipe:
+  - minecraft:recipe $1-
+  minecraft:reload:
+  - bcv Reloading!
+  reload:
+  - bcv Reloading!
+  spigot:restart:
+  - bcv Restarting the server
+  restart:
+  - bcv Restarting the server
+  bukkit:reload:
+  - bcv &cPlease note that this command is not supported and may cause issues when
+    using some plugins.
+  - bcv &cIf you encounter any issues please use the /stop command to restart your
+    server.
+  - bcv &aReload complete.
+  bukkit:rl:
+  - bcv &cPlease note that this command is not supported and may cause issues when
+    using some plugins.
+  - bcv &cIf you encounter any issues please use the /stop command to restart your
+    server.
+  - bcv &aReload complete.
+  rl:
+  - bcv &cPlease note that this command is not supported and may cause issues when
+    using some plugins.
+  - bcv &cIf you encounter any issues please use the /stop command to restart your
+    server.
+  - bcv &aReload complete.
+  essentials:showkit:
+  - essentials:kit $1-
+  showkit:
+  - kit $1-
+  minecraft:stop:
+  - bcv Stopping the server
+  stop:
+  - bcv Stopping the server
+  tag:
+  - minecraft:tag $1-
+  teleport:
+  - minecraft:teleport $1-
+  tell:
+  - minecraft:tell $1-
+  tellraw:
+  - minecraft:tellraw $1-
+  time:
+  - minecraft:time $1-
+  tp:
+  - minecraft:tp $1-
+  transfer:
+  - []
+  minecraft:transfer:
+  - []
+  w:
+  - minecraft:w $1-
+  weather:
+  - minecraft:weather $1-
+  xp:
+  - minecraft:xp $1-
+  tick:
+  - []
+  minecraft:tick:
+  - []
+  return:
+  - []
+  minecraft:return:
+  - []
+  place:
+  - []
+  minecraft:place:
+  - []
+  datapack:
+  - []
+  minecraft:datapack:
+  - []
+  test:
+  - []
+  minecraft:test:
+  - []
+  dialog:
+  - []
+  minecraft:dialog:
+  - []
+unrestricted-advancements: false

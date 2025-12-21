@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Minecraft Server WebUI</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- xterm.js (ANSI Farben/Formatierung) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm/css/xterm.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Minecraft Server WebUI</h1>
+      <div id="statusLine" class="status">Status: …</div>
+      <div id="lockLine" class="lock">Lock: …</div>
+    </header>
+
+    <section class="controls">
+      <button id="btnStart">Start</button>
+      <button id="btnStop">Stop</button>
+      <button id="btnRestart">Restart</button>
+      <button id="btnReset">Reset</button>
+    </section>
+
+    <section class="panel">
+      <div class="panelHead">
+        <h2>Live-Konsole</h2>
+        <div class="hint" id="ptyHint"></div>
+      </div>
+
+      <!-- xterm mount -->
+      <div id="terminal" class="terminal"></div>
+    </section>
+
+<section class="files">
+  <div class="filePanel">
+    <div class="fileHead">
+      <h2>Logs (~/logs/)</h2>
+    </div>
+    <div id="logsList" class="fileList"></div>
+  </div>
+
+  <div class="filePanel">
+    <div class="fileHead">
+      <h2>Schematics (~/schematics/)</h2>
+      <button id="btnUpload" class="secondary">Upload</button>
+      <input id="uploadInput" type="file" style="display:none" />
+    </div>
+    <div id="schemList" class="fileList"></div>
+  </div>
+</section>
+
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xterm/lib/xterm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit/lib/xterm-addon-fit.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+

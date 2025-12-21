@@ -1,0 +1,145 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #0f1216;
+  color: #e8eef6;
+}
+.wrap { max-width: 1100px; margin: 0 auto; padding: 16px; }
+
+header {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+h1 { margin: 0; font-size: 22px; }
+.status, .lock { opacity: .9; }
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 18px;
+}
+button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #2a3340;
+  background: #1b2430;
+  color: #e8eef6;
+  cursor: pointer;
+}
+button.secondary { background: #141b24; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+
+.panel {
+  background: #121823;
+  border: 1px solid #243042;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+.panelHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.panel h2 { margin: 0 0 10px; font-size: 16px; }
+.hint { opacity: .8; font-size: 13px; }
+
+.terminal {
+  height: 360px;
+  border-radius: 12px;
+  border: 1px solid #243042;
+  background: #0b0f15;
+  overflow: hidden;
+  cursor: text;
+}
+.terminal .xterm { height: 100%; }
+
+.consoleInput {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.consoleInput input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #2a3340;
+  background: #0b0f15;
+  color: #e8eef6;
+}
+
+#actionOut {
+  max-height: 220px;
+  overflow: auto;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #243042;
+  background: #0b0f15;
+  white-space: pre-wrap;
+}
+
+.files{
+  display:flex;
+  gap:14px;
+  margin-top:14px;
+}
+
+.filePanel{
+  flex:1;
+  background:#121823;
+  border:1px solid #243042;
+  border-radius:14px;
+  padding:12px;
+  min-width:0;
+}
+
+.fileHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.fileList{
+  height:320px;
+  overflow:auto;
+  border-radius:12px;
+  border:1px solid #243042;
+  background:#0b0f15;
+  padding:8px;
+}
+
+.fileRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:8px;
+  border-radius:10px;
+}
+
+.fileRow:hover{
+  background:#111826;
+}
+
+.fileName{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.fileBtns{
+  display:flex;
+  gap:8px;
+  flex-shrink:0;
+}
+
+.fileMeta{
+  opacity:.75;
+  font-size:12px;
+}

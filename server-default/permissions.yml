@@ -1,0 +1,108 @@
+op:
+  default: op
+  children:
+      # Every permission is granted for ops by default, disable a few
+
+      minecraft.command.setworldspawn: false
+
+      essentials.delwarp: false
+      essentials.setwarp: false
+      essentials.ban.exempt: false
+      essentials.chat.spy.exempt: false
+      essentials.commandcooldowns.bypass: false
+      essentials.fly.safelogin: false
+      essentials.invsee.preventmodify: false
+      essentials.jail.exempt: false
+      essentials.joinfullserver: false
+      essentials.keepinv: false
+      essentials.keepxp: false
+      essentials.kick.exempt: false
+      essentials.kill.exempt: false
+      essentials.list.hidden: false
+      essentials.mute.exempt: false
+      essentials.near.maxexempt: false
+      essentials.pvpdelay.exempt: false
+      essentials.sudo.exempt: false
+      essentials.tempban.exempt: false
+      essentials.updatecheck: false
+      essentials.vanish.effect: false
+      essentials.vanish.interact: false
+      essentials.vanish.see: false
+      essentials.mail: false
+      geyser.command.reload: false
+      geyser.command.stop: false
+
+      # Essentials requires this permission to be explicitly granted
+      # to players
+
+      essentials.nick.allowunsafe: true
+
+      # //hmi (broken); update alerts (disabled) and //wea (bypasses limits)
+      fawe.admin: false
+      fawe.bypass: false
+      fawe.bypass.regions: false
+
+      # FAWE does not grant all permissions to OPs by default, so we have to
+      # do this to give players access to the full set of WorldEdit commands.
+      fawe.setupdispatcher: true
+      worldedit.anyblock: true
+      worldedit.brush.butcher: true
+      worldedit.brush.deform: true
+      worldedit.brush.forest: true
+      worldedit.brush.list: true
+      worldedit.brush.load: true
+      worldedit.brush.lower: true
+      worldedit.brush.options.tracemask: true
+      worldedit.brush.paint: true
+      worldedit.brush.primary: true
+      worldedit.brush.raise: true
+      worldedit.brush.scroll: true
+      worldedit.brush.secondary: true
+      worldedit.brush.set: true
+      worldedit.brush.surface: true
+      worldedit.brush.sweep: true
+      worldedit.brush.targetmask: true
+      worldedit.brush.targetoffset: true
+      worldedit.brush.target: true
+      worldedit.brush.visualize: true
+      worldedit.butcher: true
+      worldedit.clipboard.asset: true
+      worldedit.clipboard.lazycut: true
+      worldedit.clipboard.load: true
+      worldedit.clipboard.save: true
+      worldedit.debugpaste: true
+      worldedit.drawsel: true
+      worldedit.fast: true
+      worldedit.generation.image: true
+      worldedit.generation.ore: true
+      worldedit.generation.shape.biome: true
+      worldedit.global-texture: true
+      worldedit.history.clear: true
+      worldedit.light.fix: true
+      worldedit.light.remove: true
+      worldedit.light.set: true
+      worldedit.masks: true
+      worldedit.nbtinfo: true
+      worldedit.patterns: true
+      worldedit.region.deform: true
+      worldedit.region.fall: true
+      worldedit.region.flora: true
+      worldedit.remove: true
+      worldedit.schematic.load.asset: true
+      worldedit.schematic.load.other: true
+      worldedit.schematic.load.web: true
+      worldedit.schematic.remap: true
+      worldedit.schematic.save.other: true
+      worldedit.searchitem: true
+      worldedit.setwand: true
+      worldedit.threads: true
+      worldedit.toggleplace: true
+      worldedit.transforms: true
+
+deop:
+  default: not-op
+  children:
+      # Allow non-ops to op themselves
+
+      minecraft.command.op: true
+      minecraft.command.selector: true

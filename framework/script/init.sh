@@ -6,6 +6,6 @@
 # Run scripts for starting the Minecraft server and schematic
 # checker in the background
 
-cd ~/
+cd ~/kaboom/
 
-dtach -n kaboom ~/framework/script/server.sh
+dtach -n kaboom ~/kaboom/framework/script/server.sh

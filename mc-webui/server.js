@@ -8,7 +8,7 @@ const multer = require("multer");
 const { Server } = require("socket.io");
 const { spawn } = require("child_process");
 
-dotenv.config({ path: '~/config.env' });
+dotenv.config({ path: '~/kaboom/config.env' });
 
 let pty = null;
 try {
@@ -18,7 +18,7 @@ try {
   // bleibt null -> UI zeigt Hinweis
 }
 
-const HOME = os.homedir();
+const HOME = path.join(os.homedir(), "kaboom");
 const DTACH_SOCKET = path.join(HOME, "kaboom");
 
 const LOG_DIR = path.join(HOME, "logs");

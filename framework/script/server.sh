@@ -2,10 +2,10 @@
 
 # The alive checker and Minecraft server is started at the same time
 
-PATH="$HOME/framework/vendor/java/bin/:$PATH"
+PATH="$HOME/kaboom/framework/vendor/java/bin/:$PATH"
 
 # Make sure we're in the server folder, located in the home directory
-cd ~/server/
+cd ~/kaboom/server/
 
 while true; do
 	# Check if the server is stuck in a crash loop, and reset worlds if this is the case
@@ -38,7 +38,7 @@ while true; do
 
 	# Start alive checker
 
-	dtach -n alivecheck ~/framework/script/alivecheck.sh
+	dtach -n alivecheck ~/kaboom/framework/script/alivecheck.sh
 
 	# Start Minecraft server
 
@@ -71,7 +71,7 @@ while true; do
 		-Dpaper.playerconnection.keepalive=60 \
 		-DIReallyKnowWhatIAmDoingISwear \
 		\
-		-jar server.jar nogui 2>&1 | tee -a ~/logs/$(date +"%Y-%m-%d").log
+		-jar server.jar nogui 2>&1 | tee -a ~/kaboom/logs/$(date +"%Y-%m-%d").log
 
 	# Stop alive checker (will be started again on the next run)
 

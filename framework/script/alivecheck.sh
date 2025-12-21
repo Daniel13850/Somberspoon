@@ -4,7 +4,7 @@
 # to be stuck
 
 set -x
-. ~/config.env
+. ~/kaboom/config.env
 
 while true; do
 	sleep 420
@@ -13,9 +13,9 @@ while true; do
 
 	if [ "$(env printf '\xFE' | nc -w 15 0.0.0.0 ${server_port} | wc -m)" -eq 0 ]; then
 		pkill -9 java
-		echo $(date) >> ~/kill.log
+		echo $(date) >> ~/kaboom/kill.log
 	else
 		# Server is still running, reset the crash loop detector
-		rm ~/server/server_stops.log
+		rm ~/kaboom/server/server_stops.log
 	fi
 done

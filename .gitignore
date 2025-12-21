@@ -14,11 +14,5 @@ server-default/plugins/Geyser.jar
 server-default/plugins/ViaVersion.jar
 server-default/plugins/ViaBackwards.jar
 server-default/plugins/ViaRewind.jar
-server-default/mods/PaperMixins.jar
-server-default/plugins/CommandSpy.jar
-server-default/plugins/Extras.jar
-server-default/plugins/iControlU.jar
-server-default/plugins/ParticleTrails.jar
-server-default/plugins/Weapons.jar
 mc-webui/node_modules/
 mc-webui/package-lock.json

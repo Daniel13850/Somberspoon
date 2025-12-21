@@ -1,6 +1,7 @@
 kill.log
 kaboom
 config.env
+motd.txt
 framework/vendor/java/
 server/
 logs/

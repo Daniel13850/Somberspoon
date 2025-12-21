@@ -12,6 +12,13 @@ rm -f ~/kaboom/kaboom
 
 . ~/kaboom/config.env
 
+for var in $@
+do
+  if [ $var = "noupdate" ]; then
+    auto_update="false"
+  fi
+done
+
 if [ $auto_update = "true" ]; then
   cd ~/kaboom/
   git fetch origin --depth 1

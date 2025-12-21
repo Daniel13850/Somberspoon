@@ -1,6 +1,0 @@
-&6Welcome!
-&7This is a fork of &8https://github.com/kaboomserver/&7.
-&7Overworld Map: &8https://www.planetminecraft.com/project/greenfield---new-life-size-city-project/&7.
-&7There are some Warp Points &8(see /warps)&7.
-&7Reset is every 24 hours &8(6 AM german time)&7.
-&7Saved schematics are still available after resets.

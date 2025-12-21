@@ -23,12 +23,21 @@ rm -f ~/kaboom
 #git reflog expire --expire=all --all
 #git gc --prune=all
 
+. ~/config.env
+
+if [ $auto_update ]; then
+  cd ~
+  git fetch origin --depth 1
+  git reset --hard origin/master
+  git reflog expire --expire=all --all
+  git gc --prune=all
+fi
+
 chmod -R 777 ~/server/
 rm -rf ~/server/*
 cp -Tr ~/server-default/ ~/server/
 mkdir -p ~/logs/
 mkdir -p ~/schematics/
-. ~/config.env
 sed -i "s/^server-ip=.*/server-ip=${server_host}/" ~/server/server.properties
 sed -i "s/^server-port=.*/server-port=${server_port}/" ~/server/server.properties
 sed -i "s/^enable-query=.*/enable-query=${query_enabled}/" ~/server/server.properties
@@ -37,3 +46,4 @@ sed -i "0,/^[[:space:]]*clone-remote-port:/{s/^\([[:space:]]*\)clone-remote-port
 sed -i "0,/^[[:space:]]*port:/{s/^\([[:space:]]*\)port:.*/\1port: ${bedrock_port_if_no_clone}/}" ~/server/plugins/Geyser-Spigot/config.yml
 sed -i "0,/^[[:space:]]*enabled:/{s/^\([[:space:]]*\)enabled:.*/\1enabled: ${discord_log_enabled}/}" ~/server/plugins/DiscordLog/config.yml
 sed -i "0,/^[[:space:]]*webhook:/{s|^\([[:space:]]*\)webhook:.*|\1webhook: ${discord_log_webhook}|}" ~/server/plugins/DiscordLog/config.yml
+echo $essentials_motd > ~/server/plugins/Essentials/motd.txt

@@ -66,7 +66,7 @@ const SCRIPTS = {
   start: path.join(HOME, "framework", "script", "init.sh"),
   stop: path.join(HOME, "framework", "script", "shutdown.sh"),
   restart: path.join(HOME, "framework", "script", "restart.sh"),
-  reset: path.join(HOME, "framework", "script", "reset.sh") + " noupdate"
+  reset: path.join(HOME, "framework", "script", "reset.sh")
 };
 
 // ----- Zustand / Lock (serverseitig) -----

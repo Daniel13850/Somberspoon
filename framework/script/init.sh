@@ -8,4 +8,4 @@
 
 cd ~/kaboom/
 
-dtach -n kaboom ~/kaboom/framework/script/server.sh
+dtach -n minecraft.sock ~/kaboom/framework/script/server.sh

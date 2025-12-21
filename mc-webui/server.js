@@ -19,7 +19,7 @@ try {
 }
 
 const HOME = path.join(os.homedir(), "kaboom");
-const DTACH_SOCKET = path.join(HOME, "kaboom");
+const DTACH_SOCKET = path.join(HOME, "minecraft.sock");
 
 const LOG_DIR = path.join(HOME, "logs");
 const SCHEM_DIR = path.join(HOME, "schematics");

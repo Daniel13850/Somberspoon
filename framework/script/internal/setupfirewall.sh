@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd "$(dirname "$0")"
-. ../../../kaboom/config.env
+. ../../../config.env
 
 if [ $bedrock_clone_java_port = "true" ]; then
   bedrock_port=$server_port

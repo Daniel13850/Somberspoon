@@ -16,7 +16,7 @@ Its a fork of the Kaboom ([Credit](https://github.com/kaboomserver/)) server and
  `cd && git clone https://github.com/Daniel13850/Somberspoon kaboom/`
  It is important, that you clone the repo in exactly that folder by copying the full command.
  4. Enter that directory and copy the Configuration and the MOTD file and edit that files to configure the server:
- `cd ~/kaboom/ && cp config.env.sample config.env && motd.txt.sample motd.txt`
+ `cd ~/kaboom/ && cp config.env.sample config.env && cp motd.txt.sample motd.txt`
  (Dont edit the .sample files, because there are resetting on updates from this repo)
  `nano config.env` (here you can edit the server hosting settings, discord webhook, the webinterface hosting settings (if you use it) and toggle auto-updating from this repo on server reset (You need to disable auto_update if you want make changes on the server that cant be configured in this config file)
  `nano motd.txt` (here you can change the MOTD (the Message that is appearing on server join, not the normal Minecraft MOTD in the serverlist))

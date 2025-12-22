@@ -23,3 +23,4 @@ Its a fork of the Kaboom ([Credit](https://github.com/kaboomserver/)) server and
 `cd ~/kaboom/server-default/ && ./scripts/update.sh` (to download the server software and some plugins (like Essentials or ViaVersion) the first time)
 `~/kaboom/framework/script/reset.sh` (to copy the server template to the folder where the server is running)
  6. Now you can use the scripts on `~/kaboom/framework/script/` to run the server (`~/kaboom/framework/script/init.sh`) or stop (`shutdown.sh`), restart (`restart.sh`) and resetting (`reset.sh`) it everytime. Dont run the scripts in the `internal` folder.
+ 7. You can view the console by running `dtach -a ~/kaboom/minecraft.sock`. At server startup you will see many errors, this is correct, because for security reasons the server running script is locking the configuration files to make it read-only.

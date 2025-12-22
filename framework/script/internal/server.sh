@@ -38,7 +38,7 @@ while true; do
 
 	# Start alive checker
 
-	dtach -n alivecheck.sock ~/kaboom/framework/script/alivecheck.sh
+	dtach -n alivecheck.sock ~/kaboom/framework/script/internal/alivecheck.sh
 
 	# Start Minecraft server
 

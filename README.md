@@ -1,5 +1,5 @@
 ﻿# Somberspoon
-Its a fork of the Kaboom server and framework ([Credit](https://github.com/kaboomserver/)) with more features:
+Its a fork of the Kaboom ([Credit](https://github.com/kaboomserver/)) server and framework with more features:
  1. More robust scripts that preventing running the server multiple times
  2. Logging and Schematic Folders that doesnt resetting on server resets
  3. An configuration where you can configure the server IP and port (because the server config files are resetting on update) and more settings

@@ -9,7 +9,7 @@ else
   bedrock_port=$bedrock_port_if_no_clone
 fi
 
-iptables -t nat -A INPUT -p tcp --dport $server_port -j SNAT --to-source 10.131.0.0-10.131.255.255
-iptables -t nat -A INPUT -p udp --dport $bedrock_port -j SNAT --to-source 10.131.0.0-10.131.255.255
-ip6tables -t nat -A INPUT -p tcp --dport $server_port -j SNAT --to-source fdef:dead:af::1-fdef:dead:af::ffff
-ip6tables -t nat -A INPUT -p udp --dport $bedrock_port -j SNAT --to-source fdef:dead:af::1-fdef:dead:af::ffff
+/sbin/iptables -t nat -A INPUT -p tcp --dport $server_port -j SNAT --to-source 10.131.0.0-10.131.255.255
+/sbin/iptables -t nat -A INPUT -p udp --dport $bedrock_port -j SNAT --to-source 10.131.0.0-10.131.255.255
+/sbin/ip6tables -t nat -A INPUT -p tcp --dport $server_port -j SNAT --to-source fdef:dead:af::1-fdef:dead:af::ffff
+/sbin/ip6tables -t nat -A INPUT -p udp --dport $bedrock_port -j SNAT --to-source fdef:dead:af::1-fdef:dead:af::ffff

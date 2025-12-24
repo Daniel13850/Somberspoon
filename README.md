@@ -9,28 +9,28 @@ Its a fork of the Kaboom ([Credit](https://github.com/kaboomserver/)) server and
  6. An big city map ([Credit](https://www.planetminecraft.com/project/greenfield---new-life-size-city-project/)) that is used on the overworld
 ## Setup
  1. At first you need to install some dependencies:
-`sudo apt install git dtach nano`
+`sudo apt install git dtach nano jq`.
  2. Then you must create an user on your Linux system:
-`sudo adduser somberspoon` (This step is required to prevent the scripts killing Java (or other) processes from other users)
+`sudo adduser somberspoon` (This step is required to prevent the scripts killing Java (or other) processes from other users).
  3. Login to your new user, and clone that repository in a folder named **kaboom** in your home directory with this command:
-`cd && git clone https://github.com/Daniel13850/Somberspoon kaboom/` (It is important, that you clone the repo in exactly that folder by copying the full command)
+`cd && git clone https://github.com/Daniel13850/Somberspoon kaboom/` (It is important, that you clone the repo in exactly that folder by copying the full command).
 4. Enter that directory and copy the Configuration and the MOTD file and edit that files to configure the server:
-`cd ~/kaboom/ && cp config.env.sample config.env && cp motd.txt.sample motd.txt` (Dont edit the .sample files, because there are resetting on updates from this repo) 
-`nano config.env` (here you can edit the server hosting settings, discord webhook, the webinterface hosting settings (if you use it) and toggle auto-updating from this repo on server reset (You need to disable auto_update if you want make changes on the server templare or the framework that cant be configured in this config file))
-`nano motd.txt` (here you can change the MOTD (the Message that is appearing on server join, not the normal Minecraft MOTD in the serverlist))
+`cd ~/kaboom/ && cp config.env.sample config.env && cp motd.txt.sample motd.txt` (Dont edit the .sample files, because there are resetting on updates from this repo),
+`nano config.env` (here you can edit the server hosting settings, discord webhook, the webinterface hosting settings (if you use it) and toggle auto-updating from this repo on server reset (You need to disable auto_update if you want make changes on the server templare or the framework that cant be configured in this config file)),
+`nano motd.txt` (here you can change the MOTD (the Message that is appearing on server join, not the normal Minecraft MOTD in the serverlist)).
  5. Now before your server is ready to start, you need to run a few scripts (copy the commands exactly):
-`cd ~/kaboom/framework/vendor/ && ./generate_jre.sh` (to generate the Java Runtime that is used by the server)
-`cd ~/kaboom/server-default/ && ./scripts/update.sh` (to download the server software and some plugins (like Essentials or ViaVersion) the first time)
-`~/kaboom/framework/script/reset.sh` (to copy the server template to the folder where the server is running)
+`cd ~/kaboom/framework/vendor/ && ./generate_jre.sh` (to generate the Java Runtime that is used by the server),
+`cd ~/kaboom/server-default/ && ./scripts/update.sh` (to download the server software and some plugins (like Essentials or ViaVersion) the first time),
+`~/kaboom/framework/script/reset.sh` (to copy the server template to the folder where the server is running).
  6. Now you can use the scripts on `~/kaboom/framework/script/` to run the server (`~/kaboom/framework/script/init.sh`) or stop (`shutdown.sh`), restart (`restart.sh`) and resetting (`reset.sh`) it everytime. Dont run the scripts in the `internal` folder.
  7. You can view the console by running `dtach -a ~/kaboom/minecraft.sock`. At server startup you will see many errors, this is correct, because for security reasons the server running script is locking the configuration files to make it read-only.
  ## Optional Setups
 ### IP masking (recommended)
-To make IP address private (because everyone can see it via /seen), you need to define some rules in iptables. There is a script, which you need to run with **root**, to setup the rules automatically to your configured ports:
+To make IP addresses of players private (because everyone can see it via /seen), you need to define some rules in iptables. There is a script, which you need to run with **root**, to setup the rules automatically to your configured ports:
 `sudo /home/somberspoon/kaboom/framework/script/internal/setupfirewall.sh` (change the username to your username where you run somberspoon)
 
 To make the rules automatically applying on reboot, running `sudo crontab -e` (with your root user), and adding this line to your cronjob file:
-`@reboot /home/somberspoon/kaboom/framework/script/internal/setupfirewall.sh` (change the username where you run somberspoon)
+`@reboot /home/somberspoon/kaboom/framework/script/internal/setupfirewall.sh` (change the username to your username where you run somberspoon)
 
 If you change your server port(s) in the `config.env` file, you need to either reboot the machine (if you have set up the cronjob) or run the script manually again, to re-enable IP masking.
 ### Autostart and Autoreset
@@ -46,13 +46,13 @@ To automatically update the plugins, reset your server and start it again, add t
 If you only want to reset and start the server without updating plugins, add this line instead:
 `0 6 * * * ~/kaboom/framework/script/reset.sh && ~/kaboom/framework/script/init.sh`
 You can also make a cronjob for updating the plugins for example, once a week, add this line to do this:
-`0 5 * * MON cd ~/kaboom/server-default/ && ./scripts/update.sh` (it updates the plugins at 5 AM on mondays, make sure you do this before the reset, so it will applying on the next reset, in this example one hour later if you leave the server reset on 6 AM)
+`0 5 * * MON cd ~/kaboom/server-default/ && ./scripts/update.sh` (It updates the plugins at 5 AM on mondays, make sure you do this before the reset, so it will applying on the next reset, in this example one hour later if you leave the server reset on 6 AM)
 ### Webinterface
 If you want to use the webinterface, you can define the host and port in your `config.env` file (make sure the webinterface is not accessable outside your network, because the webinterface has no authentification, or leave the host at 127.0.0.1 and set up an reverse proxy with an authentification method).
-and then you need to switch to your root user and first install node (if you dont have it already):
-`sudo apt install npm`
+Then you need to switch to your root user and first install node (if you dont have it already):
+`sudo apt install npm`.
 Then switch again to your user where you run somberspoon, and install the dependencies:
-`cd ~/kaboom/mc-webui/ && npm install`
+`cd ~/kaboom/mc-webui/ && npm install`.
 Then you need to switch again to your root user and set up a service:
 `sudo nano /etc/systemd/system/somberspoon-webui.service`, and paste this content in that file:
 
@@ -86,4 +86,4 @@ Then you need to switch again to your root user and set up a service:
     WantedBy=multi-user.target
 
 Make sure to change `somberspoon` if you changed your user differently.
-Enable your service now with: `sudo systemctl enable --now somberspoon-webui`
+Enable your service now with: `sudo systemctl enable --now somberspoon-webui`.

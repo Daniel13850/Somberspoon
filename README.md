@@ -27,10 +27,10 @@ Its a fork of the Kaboom ([Credit](https://github.com/kaboomserver/)) server and
  ## Optional Setups
 ### IP masking (recommended)
 To make IP addresses of players private (because everyone can see it via /seen), you need to define some rules in iptables. There is a script, which you need to run with **root**, to setup the rules automatically to your configured ports:
-`sudo /home/somberspoon/kaboom/framework/script/internal/setupfirewall.sh` (change the username to your username where you run somberspoon)
+`sudo /home/somberspoon/kaboom/framework/script/internal/setupfirewall.sh` (change the username to your username where you run somberspoon).
 
 To make the rules automatically applying on reboot, running `sudo crontab -e` (with your root user), and adding this line to your cronjob file:
-`@reboot /home/somberspoon/kaboom/framework/script/internal/setupfirewall.sh` (change the username to your username where you run somberspoon)
+`@reboot /home/somberspoon/kaboom/framework/script/internal/setupfirewall.sh` (change the username to your username where you run somberspoon).
 
 If you change your server port(s) in the `config.env` file, you need to either reboot the machine (if you have set up the cronjob) or run the script manually again, to re-enable IP masking.
 ### Autostart and Autoreset
@@ -38,15 +38,15 @@ To make the server automatically starting on reboot and reset it automatically, 
 Login to your user where you run somberspoon, and open your cronjob file with `crontab -e`.
 
 To make your server automatically starting on reboot, add this line to your cronjob file:
-`@reboot ~/kaboom/framework/script/shutdown.sh && ~/kaboom/framework/script/init.sh` (The shutdown script before the init script is for cleaning up eventually dead socket files that preventing the server starting)
+`@reboot ~/kaboom/framework/script/shutdown.sh && ~/kaboom/framework/script/init.sh` (The shutdown script before the init script is for cleaning up eventually dead socket files that preventing the server starting).
 
 To automatically update the plugins, reset your server and start it again, add this line to your cronjob file:
-`0 6 * * * cd ~/kaboom/server-default/ && ./scripts/update.sh && ~/kaboom/framework/script/reset.sh && ~/kaboom/framework/script/init.sh` (the cronjob is now running at 6 AM, change this if you want)
+`0 6 * * * cd ~/kaboom/server-default/ && ./scripts/update.sh && ~/kaboom/framework/script/reset.sh && ~/kaboom/framework/script/init.sh` (the cronjob is now running at 6 AM, change this if you want).
 
 If you only want to reset and start the server without updating plugins, add this line instead:
-`0 6 * * * ~/kaboom/framework/script/reset.sh && ~/kaboom/framework/script/init.sh`
+`0 6 * * * ~/kaboom/framework/script/reset.sh && ~/kaboom/framework/script/init.sh`.
 You can also make a cronjob for updating the plugins for example, once a week, add this line to do this:
-`0 5 * * MON cd ~/kaboom/server-default/ && ./scripts/update.sh` (It updates the plugins at 5 AM on mondays, make sure you do this before the reset, so it will applying on the next reset, in this example one hour later if you leave the server reset on 6 AM)
+`0 5 * * MON cd ~/kaboom/server-default/ && ./scripts/update.sh` (It updates the plugins at 5 AM on mondays, make sure you do this before the reset, so it will applying on the next reset, in this example one hour later if you leave the server reset on 6 AM).
 ### Webinterface
 If you want to use the webinterface, you can define the host and port in your `config.env` file (make sure the webinterface is not accessable outside your network, because the webinterface has no authentification, or leave the host at 127.0.0.1 and set up an reverse proxy with an authentification method).
 Then you need to switch to your root user and first install node (if you dont have it already):

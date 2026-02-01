@@ -13,7 +13,7 @@ while true; do
 
 	stop_log_file=server_stops.log
 
-	if [ -f "$stop_log_file" ] && [ "$(wc -l < $stop_log_file)" -gt 3 ]; then
+	if [ -f "$stop_log_file" ] && [ "$(wc -l < $stop_log_file)" -gt 2 ]; then
 		rm -rf worlds/ plugins/FastAsyncWorldEdit/clipboard/ plugins/FastAsyncWorldEdit/history/
 		cp -Tr ~/kaboom/server-default/worlds/ worlds/
 		rm "$stop_log_file"

@@ -11,7 +11,7 @@ while true; do
 
 	# If the server doesn't respond to ping, kill it
 
-	if [ "$(env printf '\xFE' | nc -w 15 0.0.0.0 ${server_port} | wc -m)" -eq 0 ]; then
+	if [ "$(env printf '\xFE' | nc -w 15 ${server_host} ${server_port} | wc -m)" -eq 0 ]; then
 		pkill -9 java
 		echo $(date) >> ~/kaboom/kill.log
 	else

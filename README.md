@@ -85,5 +85,5 @@ Then you need to switch again to your root user and set up a service:
     [Install]
     WantedBy=multi-user.target
 
-Make sure to change `somberspoon` if you changed your user differently.
+Make sure to change `somberspoon` if you named your user differently.
 Enable your service now with: `sudo systemctl enable --now somberspoon-webui`.

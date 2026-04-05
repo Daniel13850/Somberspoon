@@ -6,7 +6,7 @@ Its a fork of the Kaboom ([Credit](https://github.com/kaboomserver/)) server and
  3. An configuration where you can configure the server IP and port (because the server config files are resetting on update) and more settings
  4. An optional Webinterface where you can view the console, running power actions, downloading logs and editing the schematic folder
  5. An Discord log plugin that uses an webhook for logging chat messages and commands to an Discord channel
- 6. An big city map ([Credit](https://www.planetminecraft.com/project/greenfield---new-life-size-city-project/)) that is used on the overworld
+ 6. You can upload your default world(s) into the worlds folder and on every server reset they will be used. You can upload essentials warp points too.
 ## Setup
  1. At first you need to install some dependencies:
 `sudo apt install git dtach nano jq`.
@@ -16,7 +16,7 @@ Its a fork of the Kaboom ([Credit](https://github.com/kaboomserver/)) server and
 `cd && git clone https://github.com/Daniel13850/Somberspoon kaboom/` (It is important, that you clone the repo in exactly that folder by copying the full command).
 4. Enter that directory and copy the Configuration and the MOTD file and edit that files to configure the server:
 `cd ~/kaboom/ && cp config.env.sample config.env && cp motd.txt.sample motd.txt` (Dont edit the .sample files, because there are resetting on updates from this repo),
-`nano config.env` (here you can edit the server hosting settings, discord webhook, the webinterface hosting settings (if you use it) and toggle auto-updating from this repo on server reset (You need to disable auto_update if you want make changes on the server templare or the framework that cant be configured in this config file)),
+`nano config.env` (here you can edit the server hosting settings, discord webhook, the webinterface hosting settings (if you use it) and toggle auto-updating from this repo on server reset (You need to disable auto_update if you want make changes on the server templare or the framework that cant be configured in this config file) and more),
 `nano motd.txt` (here you can change the MOTD (the Message that is appearing on server join, not the normal Minecraft MOTD in the serverlist)).
  5. Now before your server is ready to start, you need to run a few scripts (copy the commands exactly):
 `cd ~/kaboom/framework/vendor/ && ./generate_jre.sh` (to generate the Java Runtime that is used by the server),
@@ -87,3 +87,9 @@ Then you need to switch again to your root user and set up a service:
 
 Make sure to change `somberspoon` if you named your user differently.
 Enable your service now with: `sudo systemctl enable --now somberspoon-webui`.
+### Custom Map(s)
+If you want to use a custom Map, you can upload it into the `worlds` folder. Use the following world names:
+`world`: The default overworld map, where you spawn.
+`world_nether`, `world_the_end`: self-explanatory.
+`world_flatlands`: a flatland world, but you can use any other map too.
+If you have warp points for essentials too, you can upload these into the `warps` folder.

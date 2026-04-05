@@ -34,4 +34,8 @@ sed -i "0,/^[[:space:]]*port:/{s/^\([[:space:]]*\)port:.*/\1port: ${bedrock_port
 sed -i "0,/^[[:space:]]*#address:/{s/^\([[:space:]]*\)#address:.*/\1address: ${bedrock_host}/}" ~/kaboom/server/plugins/Geyser-Spigot/config.yml
 sed -i "0,/^[[:space:]]*enabled:/{s/^\([[:space:]]*\)enabled:.*/\1enabled: ${discord_log_enabled}/}" ~/kaboom/server/plugins/DiscordLog/config.yml
 sed -i "0,/^[[:space:]]*webhook:/{s|^\([[:space:]]*\)webhook:.*|\1webhook: ${discord_log_webhook}|}" ~/kaboom/server/plugins/DiscordLog/config.yml
+sed -i "0,/^[[:space:]]*essentials.delwarp:/{s|^\([[:space:]]*\)essentials.delwarp:.*|\1essentials.delwarp: ${allow_warp_editing}|}" ~/kaboom/server/permissions.yml
+sed -i "0,/^[[:space:]]*essentials.setwarp:/{s|^\([[:space:]]*\)essentials.setwarp:.*|\1essentials.setwarp: ${allow_warp_editing}|}" ~/kaboom/server/permissions.yml
 cp ~/kaboom/motd.txt ~/kaboom/server/plugins/Essentials/motd.txt
+cp -r ~/kaboom/worlds/ ~/kaboom/server/worlds/
+cp -r ~/kaboom/warps/ ~/kaboom/server/plugins/Essentials/warps/

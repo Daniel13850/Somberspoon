@@ -16,3 +16,5 @@ server-default/plugins/ViaBackwards.jar
 server-default/plugins/ViaRewind.jar
 mc-webui/node_modules/
 mc-webui/package-lock.json
+worlds/
+warps/

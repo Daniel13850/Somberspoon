@@ -1,6 +1,7 @@
 #!/bin/sh
 
 cd "$(dirname "$0")"
+. ../../../config.env.sample
 . ../../../config.env
 
 if [ $bedrock_clone_java_port = "true" ]; then

@@ -10,6 +10,7 @@ pkill -9 server.sh
 pkill -9 java
 rm -f ~/kaboom/minecraft.sock
 
+. ~/kaboom/config.env.sample
 . ~/kaboom/config.env
 
 if [ $auto_update = "true" ]; then

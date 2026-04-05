@@ -4,6 +4,7 @@
 # to be stuck
 
 set -x
+. ~/kaboom/config.env.sample
 . ~/kaboom/config.env
 
 while true; do

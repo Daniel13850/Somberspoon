@@ -130,7 +130,7 @@ function setButtonsEnabled(status) {
 function renderStatus(status) {
   lastStatus = status;
 
-  statusLine.textContent = `Status: ${status.running ? "Running" : "Offline"} (dtach: ${status.dtachSocket})`;
+  statusLine.textContent = `Status: ${status.running ? "Running" : "Offline"}`;
 
   ptyHint.textContent = status.ptyAvailable
     ? ""

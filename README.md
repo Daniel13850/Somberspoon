@@ -92,4 +92,4 @@ If you want to use a custom Map, you can upload it into the `worlds` folder. Use
 `world`: The default overworld map, where you spawn.
 `world_nether`, `world_the_end`: self-explanatory.
 `world_flatlands`: a flatland world, but you can use any other map too.
-If you have warp points for essentials too, you can upload these into the `warps` folder.
+If you have warp points for essentials too, you can upload these into the `warps` folder and disable editing for players in the `config.env`.

@@ -8,7 +8,6 @@ const btnRestart = el("btnRestart");
 const btnReset = el("btnReset");
 
 const statusLine = el("statusLine");
-const lockLine = el("lockLine");
 const ptyHint = el("ptyHint");
 
 const logsList = el("logsList");
@@ -131,11 +130,7 @@ function setButtonsEnabled(status) {
 function renderStatus(status) {
   lastStatus = status;
 
-  statusLine.textContent = `Status: ${status.running ? "LÄUFT" : "AUS"} (dtach: ${status.dtachSocket})`;
-  const lock = status.lock;
-  lockLine.textContent = lock?.running
-    ? `Lock: AKTIV (läuft: ${lock.action})`
-    : "Lock: frei";
+  statusLine.textContent = `Status: ${status.running ? "Running" : "Offline"} (dtach: ${status.dtachSocket})`;
 
   ptyHint.textContent = status.ptyAvailable
     ? ""

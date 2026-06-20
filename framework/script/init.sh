@@ -9,7 +9,7 @@
 cd ~/kaboom/
 
 # do important steps after updates (for example new configuration settings)
-VERSION=1
+VERSION=2
 if [ -f ".version" ]; then
     LAST_VERSION=$(cat ".version")
     if ! [ "$LAST_VERSION" -eq "$LAST_VERSION" ] 2>/dev/null; then
@@ -27,7 +27,9 @@ while [ "$NEXT_VERSION" -le "$VERSION" ]; do
         1)
             echo "installing/updating Java 25..."
             cd ~/kaboom/framework/vendor/ && ./generate_jre.sh
-            echo "download/update paper 1.21.11 and the non-kaboom plugins"
+            ;;
+        2)
+            echo "download/update paper 26.1.2 and the non-kaboom plugins"
             cd ~/kaboom/server-default/ && ./scripts/update.sh
             ~/kaboom/framework/script/internal/initfiles.sh
             ;;

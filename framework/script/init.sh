@@ -38,4 +38,7 @@ done
 cd ~/kaboom/
 echo "$VERSION" > ".version"
 
+if [ ! -d "~/kaboom/server/" ]; then
+  ~/kaboom/framework/script/internal/initfiles.sh
+fi
 dtach -n minecraft.sock ~/kaboom/framework/script/internal/server.sh

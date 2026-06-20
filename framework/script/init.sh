@@ -29,7 +29,7 @@ while [ "$NEXT_VERSION" -le "$VERSION" ]; do
             cd ~/kaboom/framework/vendor/ && ./generate_jre.sh
             echo "download/update paper 1.21.11 and the non-kaboom plugins"
             cd ~/kaboom/server-default/ && ./scripts/update.sh
-            ~/kaboom/framework/script/reset.sh -noupdate
+            ~/kaboom/framework/script/internal/initfiles.sh
             ;;
     esac
 

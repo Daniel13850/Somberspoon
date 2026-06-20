@@ -18,3 +18,4 @@ mc-webui/node_modules/
 mc-webui/package-lock.json
 worlds/
 warps/
+.version

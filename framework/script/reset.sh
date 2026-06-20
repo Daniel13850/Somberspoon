@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # The following script is used when resetting the server
-# Currently every 24 h
 
 pkill -9 alivecheck.sh
 pkill -9 init.sh
@@ -12,6 +11,16 @@ rm -f ~/kaboom/minecraft.sock
 
 . ~/kaboom/config.env.sample
 . ~/kaboom/config.env
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        -noupdate)
+            echo "skip update"
+            auto_update=false
+            ;;
+    esac
+    shift
+done
 
 if [ $auto_update = "true" ]; then
   cd ~/kaboom/

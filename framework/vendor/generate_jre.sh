@@ -2,7 +2,7 @@
 set -e
 # This script is used to generate a stripped-down JRE for the server
 
-JDK_VERSION="21"
+JDK_VERSION="25"
 JDK_OS="linux"
 JDK_ARCHITECTURE="x64"
 

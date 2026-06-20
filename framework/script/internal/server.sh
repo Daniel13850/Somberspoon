@@ -45,6 +45,7 @@ while true; do
 
 	java \
 		-Xms3400M -Xmx3400M \
+		-XX:MaxDirectMemorySize=512M \
 		\
 		-Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true \
 		-XX:+UseG1GC \
@@ -52,32 +53,22 @@ while true; do
 		-XX:MaxGCPauseMillis=200 \
 		-XX:+UnlockExperimentalVMOptions \
 		-XX:+DisableExplicitGC \
+		-XX:+UseZGC \
+		-XX:+UseCompactObjectHeaders \
 		-XX:+AlwaysPreTouch \
-		-XX:G1HeapWastePercent=5 \
-		-XX:G1MixedGCCountTarget=4 \
-		-XX:G1MixedGCLiveThresholdPercent=90 \
-		-XX:G1RSetUpdatingPauseTimePercent=5 \
-		-XX:SurvivorRatio=32 \
-		-XX:+PerfDisableSharedMem \
-		-XX:MaxTenuringThreshold=1 \
-		-XX:G1NewSizePercent=30 \
-		-XX:G1MaxNewSizePercent=40 \
-		-XX:G1HeapRegionSize=8M \
-		-XX:G1ReservePercent=20 \
-		-XX:InitiatingHeapOccupancyPercent=15 \
+		-XX:+UseStringDeduplication \
 		-Xss8M \
-		-XX:MaxDirectMemorySize=512M \
 		\
+		-XX:+DisableExplicitGC \
 		-XX:-UsePerfData \
 		-Dpaper.playerconnection.keepalive=60 \
-		-DIReallyKnowWhatIAmDoingISwear \
 		\
 		-jar server.jar nogui 2>&1 | tee -a ~/kaboom/logs/$(date +"%Y-%m-%d").log
 
 	# Stop alive checker (will be started again on the next run)
 
 	pkill -9 alivecheck.sh
-	echo $(date) >> "$stop_log_file"
+	date >> "$stop_log_file"
 
 	# Ensure we don't abuse the CPU in case of failure
 	sleep 1

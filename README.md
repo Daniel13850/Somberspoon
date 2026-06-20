@@ -5,7 +5,7 @@ Its a fork of the Kaboom ([Credit](https://github.com/kaboomserver/)) server and
  2. Logging and Schematic Folders that doesnt resetting on server resets
  3. An configuration where you can configure the server IP and port (because the server config files are resetting on update) and more settings
  4. An optional Webinterface where you can view the console, running power actions, downloading logs and editing the schematic folder
- 5. An Discord log plugin that uses an webhook for logging chat messages and commands to an Discord channel
+ 5. An Discord log plugin that uses an webhook for logging chat Messages to an Discord channel
  6. You can upload your default world(s) into the worlds folder and on every server reset they will be used. You can upload essentials warp points too.
 ## Setup
  1. At first you need to install some dependencies:

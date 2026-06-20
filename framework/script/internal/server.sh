@@ -47,12 +47,6 @@ while true; do
 		-Xms3400M -Xmx3400M \
 		-XX:MaxDirectMemorySize=512M \
 		\
-		-Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true \
-		-XX:+UseG1GC \
-		-XX:+ParallelRefProcEnabled \
-		-XX:MaxGCPauseMillis=200 \
-		-XX:+UnlockExperimentalVMOptions \
-		-XX:+DisableExplicitGC \
 		-XX:+UseZGC \
 		-XX:+UseCompactObjectHeaders \
 		-XX:+AlwaysPreTouch \
@@ -61,6 +55,7 @@ while true; do
 		\
 		-XX:+DisableExplicitGC \
 		-XX:-UsePerfData \
+		-XX:+PerfDisableSharedMem \
 		-Dpaper.playerconnection.keepalive=60 \
 		\
 		-jar server.jar nogui 2>&1 | tee -a ~/kaboom/logs/$(date +"%Y-%m-%d").log
